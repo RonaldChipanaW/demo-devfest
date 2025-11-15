@@ -19,6 +19,7 @@ const App = () => {
     useEffect(() => {
         // --- COMIENZO DE LA SECCIÓN A CONFIGURAR LOCALMENTE ---
         
+        // DEVFEST PASO 1
         // 1. Reemplaza este objeto con tu configuración REAL de Firebase
         const firebaseConfigLocal = {
            
@@ -26,6 +27,8 @@ const App = () => {
 
         // 2. Reemplaza este string con tu CLAVE DE API de Gemini
         // NOTA: Para producción real, usa variables de entorno (ej: import.meta.env.VITE_GEMINI_API_KEY)
+        
+        // DEVFEST PASO 2
         const geminiApiKey = ""; 
         
         // --- FIN DE LA SECCIÓN A CONFIGURAR LOCALMENTE ---
@@ -68,19 +71,17 @@ const App = () => {
         setResponse("Generando respuesta...");
 
         // Usar la clave de Gemini
+        
+        // DEVFEST PASO 3
         const apiKey = ""; 
-        const model = 'gemini-2.5-flash-preview-09-2025';
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+        // DEVFEST PASO 4
+        // ----- Inicio Paso 4
 
-        const systemPrompt = "Eres un asistente de IA experto en todos los temas. Responde de manera concisa, útil y profesional en español. Usa el grounding de Google Search para basar tu respuesta en información actual.";
 
-        const payload = {
-            contents: [{ parts: [{ text: prompt }] }],
-            tools: [{ "google_search": {} }], 
-            systemInstruction: {
-                parts: [{ text: systemPrompt }]
-            },
-        };
+
+
+        
+        // ----- Fin Paso 4
 
         const maxRetries = 3;
         let result = null;
